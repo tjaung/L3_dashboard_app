@@ -15,6 +15,11 @@ import backend.s3_pull as s3_pull
 from pprint import pprint
 import importlib
 from datetime import date
+import dash_bootstrap_components as dbc
+import warnings
+
+warnings.simplefilter(action='ignore', category=FutureWarning)
+#warnings.simplefilter(action='ignore', category=SettingWithCopyWarning)
 
 app = Flask(__name__)
 
@@ -92,13 +97,26 @@ def generate_dashboard(data, model, params):
                             shap_interaction=False, 
                             logins=[['cohere-user', 'show_m3_the_$']])
 
+    return {'dir': dir,
+            'model_name': model_name,
+            'explainer': explainer}
+
+
+
+def generate_dash_files(dir, model_name, explainer, params):
+    fname = 'dir'
+    print(f'Writing {model_name} Dashboard File: {fname}', end='\r')
     # make dir if not exist
     create_directory_if_not_exist(dir / f"{model_name}")
-
+    
     # dump files
+    fname = 'dill'
+    print(f'Writing {model_name} Dashboard File: {fname}', end='\r')
     dump_explainer_files(explainer, model_name, dir/f"{model_name}")
 
     # generate code for dashboard file
+    fname = 'script'
+    print(f'Writing {model_name} Dashboard File: {fname}', end='\r')
     code = generate_python_code_for_dashboard(dir, model_name, params['service'])
 
     # write code
@@ -106,13 +124,13 @@ def generate_dashboard(data, model, params):
         fout.write( code )
     
     
-    print('Done')
+    print(f'Writing {model_name} Dashboard Files: Done!', end='\r')
+
 
 def get_dash_info(service, p):
     params = s3_pull.get_model_params_from_s3_buckets(service, p)
-    
-    pprint(params)
-    # for each pal:
+    #pprint(params)
+
     # pull model
     model = s3_pull.get_model(params)
 
@@ -147,8 +165,9 @@ def generate_pages():
                     print('Size of data X and y not the same. Skipping dashboard generation...')
                     continue
 
-                generate_dashboard(info['data'], info['model'], info['params'])
-
+                dash_info = generate_dashboard(info['data'], info['model'], info['params'])
+                generate_dash_files(dash_info['dir'], dash_info['model_name'], dash_info['explainer'], info['params'])
+            
             # add to hub
             module = 'pages.L3_models.' + pal_file
             print('================================================')
@@ -166,6 +185,10 @@ def generate_pages():
     #hub.to_yaml(Path.cwd()/hub_v)
     
     hub = ExplainerHub(dashes, title="Data Science Team L3 Models",
-            description="Dashboards for the Humana L3 Models created by the DS team.")
+            description="Dashboards for the Humana L3 Models created by the DS team.",
+           # no_index=True)#,
+            add_dashboard_route=True,
+            bootstrap=dbc.themes.LITERA)
+            #index_to_base_route=True)
     
     return hub
