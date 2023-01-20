@@ -1,8 +1,6 @@
 import boto3
-import pyarrow.parquet as pq
 import s3fs
 import fastparquet as fp
-from pathlib import Path
 import os
 import pickle as pkl
 import pandas as pd
