@@ -19,5 +19,5 @@ hub.to_yaml("hub.yaml", integrate_dashboard_yamls=True)
 #app = hub.flask_server()
 
 if __name__ == '__main__':
-    hub.run()
-    #app.run_server(debug=True)
+    #hub.run()
+    app.run_server(debug=True)
