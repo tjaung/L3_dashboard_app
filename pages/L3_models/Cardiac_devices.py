@@ -15,7 +15,8 @@ def get_Cardiac_devices_dashboard():
     #yaml_file = model_dir + "/Cardiac_devices_dashboard.yaml"
 
     clas_explainer = ClassifierExplainer.from_file(dill_file)
-
+    print(clas_explainer.memory_usage())
+    
     return clas_explainer
 
 #author = MODELS_BY_PAL['Cardiac devices']['author']
