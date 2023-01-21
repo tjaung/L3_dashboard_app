@@ -10,12 +10,13 @@ import os.path
 import importlib
 
 
-#app = Dash(__name__, use_pages = False)
+app = Dash(__name__, use_pages = False)
 
 hub = generate_dashes.generate_pages()
 hub.to_yaml("hub.yaml", integrate_dashboard_yamls=True)
 
-app = hub.flask_server()
+#app = hub.flask_server()
 
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
+if __name__ == '__main__':
+    hub.run()
+    #app.run_server(debug=True)
