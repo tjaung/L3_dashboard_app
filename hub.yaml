@@ -21,11 +21,11 @@ explainerhub:
   kwargs: {}
   dashboards:
   - dashboard:
-      explainerfile: Foot_Surgeries_Bunionectomy_and_Hammertoe_explainer.joblib
+      explainerfile: Epidural_injections_outpatient_only_explainer.joblib
       params:
-        title: Foot Surgeries Bunionectomy and Hammertoe
-        name: Foot_Surgeries_Bunionectomy_and_Hammertoe
-        description: msk L3 Model
+        title: Epidural injections outpatient only
+        name: Epidural_injections_outpatient_only
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -38,7 +38,77 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
+        external_stylesheets: null
+        url_base_pathname: /dashboards/Epidural_injections_outpatient_only/
+        routes_pathname_prefix: null
+        requests_pathname_prefix: null
+        responsive: true
+        logins: null
+        port: 8050
+        importances: true
+        model_summary: true
+        contributions: true
+        whatif: true
+        shap_dependence: true
+        shap_interaction: true
+        decision_trees: true
+        kwargs: {}
+        tabs: null
+  - dashboard:
+      explainerfile: Facet_injections_explainer.joblib
+      params:
+        title: Facet injections
+        name: Facet_injections
+        description: MSK L3 Model
+        simple: false
+        hide_header: false
+        header_hide_title: false
+        header_hide_selector: false
+        header_hide_download: false
+        hide_poweredby: false
+        block_selector_callbacks: false
+        pos_label: null
+        fluid: true
+        mode: dash
+        width: 1000
+        height: 800
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
+        external_stylesheets: null
+        url_base_pathname: /dashboards/Facet_injections/
+        routes_pathname_prefix: null
+        requests_pathname_prefix: null
+        responsive: true
+        logins: null
+        port: 8050
+        importances: true
+        model_summary: true
+        contributions: true
+        whatif: true
+        shap_dependence: true
+        shap_interaction: true
+        decision_trees: true
+        kwargs: {}
+        tabs: null
+  - dashboard:
+      explainerfile: Foot_Surgeries_Bunionectomy_and_Hammertoe_explainer.joblib
+      params:
+        title: Foot Surgeries Bunionectomy and Hammertoe
+        name: Foot_Surgeries_Bunionectomy_and_Hammertoe
+        description: MSK L3 Model
+        simple: false
+        hide_header: false
+        header_hide_title: false
+        header_hide_selector: false
+        header_hide_download: false
+        hide_poweredby: false
+        block_selector_callbacks: false
+        pos_label: null
+        fluid: true
+        mode: dash
+        width: 1000
+        height: 800
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Foot_Surgeries_Bunionectomy_and_Hammertoe/
         routes_pathname_prefix: null
@@ -58,10 +128,9 @@ explainerhub:
   - dashboard:
       explainerfile: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty_explainer.joblib
       params:
-        title: Orthopedic Surgeries Hip, Knee and Shoulder Arthroplasty
+        title: Orthopedic Surgeries Hip Knee and Shoulder Arthroplasty
         name: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -74,7 +143,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty/
         routes_pathname_prefix: null
@@ -96,8 +165,7 @@ explainerhub:
       params:
         title: Orthopedic surgeries hip knee and shoulder arthroscopy
         name: Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -110,7 +178,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy/
         routes_pathname_prefix: null
@@ -132,8 +200,7 @@ explainerhub:
       params:
         title: Pain infusion pump
         name: Pain_infusion_pump
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -146,7 +213,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Pain_infusion_pump/
         routes_pathname_prefix: null
@@ -168,8 +235,7 @@ explainerhub:
       params:
         title: SI Joint Injections
         name: SI_Joint_Injections
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -182,7 +248,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/SI_Joint_Injections/
         routes_pathname_prefix: null
@@ -204,8 +270,7 @@ explainerhub:
       params:
         title: Spinal cord stimulators
         name: Spinal_cord_stimulators
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -218,7 +283,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Spinal_cord_stimulators/
         routes_pathname_prefix: null
@@ -240,8 +305,7 @@ explainerhub:
       params:
         title: Spinal fusion decompression kyphoplasty and vertebroplasty
         name: Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -254,7 +318,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty/
         routes_pathname_prefix: null
@@ -276,8 +340,7 @@ explainerhub:
       params:
         title: Therapy physical occupational and speech
         name: Therapy_physical_occupational_and_speech
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: MSK L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -290,7 +353,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Therapy_physical_occupational_and_speech/
         routes_pathname_prefix: null
@@ -312,8 +375,7 @@ explainerhub:
       params:
         title: Cardiac devices
         name: Cardiac_devices
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: CARDIO L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -326,7 +388,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Cardiac_devices/
         routes_pathname_prefix: null
@@ -348,8 +410,7 @@ explainerhub:
       params:
         title: Cardiac procedures surgeries
         name: Cardiac_procedures_surgeries
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: CARDIO L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -362,7 +423,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Cardiac_procedures_surgeries/
         routes_pathname_prefix: null
@@ -384,8 +445,7 @@ explainerhub:
       params:
         title: Diagnostic cardiac imaging
         name: Diagnostic_cardiac_imaging
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: CARDIO L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -398,7 +458,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Diagnostic_cardiac_imaging/
         routes_pathname_prefix: null
@@ -420,8 +480,7 @@ explainerhub:
       params:
         title: Diagnostic cardiac imaging ECHO
         name: Diagnostic_cardiac_imaging_ECHO
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: CARDIO L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -434,7 +493,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Diagnostic_cardiac_imaging_ECHO/
         routes_pathname_prefix: null
@@ -456,8 +515,7 @@ explainerhub:
       params:
         title: Colonoscopy repeat only
         name: Colonoscopy_repeat_only
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: SURGICAL_SERVICES L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -470,7 +528,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Colonoscopy_repeat_only/
         routes_pathname_prefix: null
@@ -492,8 +550,7 @@ explainerhub:
       params:
         title: Diagnostic esophagogastroduodenoscopy EGD or esophagoscopy
         name: Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy
-        description: "This dashboard shows the workings of a fitted\n            machine\
-          \ learning model, and explains its predictions."
+        description: SURGICAL_SERVICES L3 Model
         simple: false
         hide_header: false
         header_hide_title: false
@@ -506,7 +563,7 @@ explainerhub:
         mode: dash
         width: 1000
         height: 800
-        bootstrap: null
+        bootstrap: https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/litera/bootstrap.min.css
         external_stylesheets: null
         url_base_pathname: /dashboards/Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy/
         routes_pathname_prefix: null

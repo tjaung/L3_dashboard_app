@@ -4,7 +4,37 @@ users:
     password: pbkdf2:sha256:260000$u418a4vME1MMO9O8$5b43db957604b0ffd82a6f00e3515e009653469a8d1f31d6bb054f11ad46b3c8
   cohere-user:
     username: cohere-user
-    password: pbkdf2:sha256:260000$zaHDZZyB8xb3NP8i$c2cba53c03bcfe2ec2927fb9c523dc2d7bb7099679213b4ed888aad895b0ec2b
+    password: pbkdf2:sha256:260000$j82bCxr1yxLPTY95$713f8649f39fc99a804491e4093310799f2b080baf22b77f64d37ddfe41b2ab3
 dashboard_users:
   Foot_Surgeries_Bunionectomy_and_Hammertoe:
+  - cohere-user
+  Epidural_injections_outpatient_only:
+  - cohere-user
+  Facet_injections:
+  - cohere-user
+  Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty:
+  - cohere-user
+  Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy:
+  - cohere-user
+  Pain_infusion_pump:
+  - cohere-user
+  SI_Joint_Injections:
+  - cohere-user
+  Spinal_cord_stimulators:
+  - cohere-user
+  Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty:
+  - cohere-user
+  Therapy_physical_occupational_and_speech:
+  - cohere-user
+  Cardiac_devices:
+  - cohere-user
+  Cardiac_procedures_surgeries:
+  - cohere-user
+  Diagnostic_cardiac_imaging:
+  - cohere-user
+  Diagnostic_cardiac_imaging_ECHO:
+  - cohere-user
+  Colonoscopy_repeat_only:
+  - cohere-user
+  Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy:
   - cohere-user

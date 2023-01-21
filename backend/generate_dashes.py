@@ -53,10 +53,10 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 
 def get_{model_name}_dashboard():
-    model_dir = "{dir}/{model_name}"
-    joblib_file = model_dir + "/{model_name}.joblib"
+    model_dir = str(Path.cwd() / "modelFiles/{model_name}")
+    #joblib_file = model_dir + "/{model_name}.joblib"
     dill_file = model_dir + "/{model_name}.dill"
-    yaml_file = model_dir + "/{model_name}_dashboard.yaml"
+    #yaml_file = model_dir + "/{model_name}_dashboard.yaml"
 
     clas_explainer = ClassifierExplainer.from_file(dill_file)
 
@@ -68,7 +68,8 @@ db = ExplainerDashboard(get_{model_name}_dashboard(),
     title='{model_title}', 
     name='{model_name}',
     logins = [['cohere-user', 'show_m3_the_$']],
-    description="{service} L3 Model")
+    description="{service.upper()} L3 Model",
+    bootstrap=dbc.themes.LITERA)
 
 '''
 
@@ -189,6 +190,6 @@ def generate_pages():
            # no_index=True)#,
             add_dashboard_route=True,
             bootstrap=dbc.themes.LITERA)
-            #index_to_base_route=True)
+#            index_to_base_route=True)
     
     return hub
