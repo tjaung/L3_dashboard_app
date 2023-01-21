@@ -4,7 +4,7 @@ users:
     password: pbkdf2:sha256:260000$u418a4vME1MMO9O8$5b43db957604b0ffd82a6f00e3515e009653469a8d1f31d6bb054f11ad46b3c8
   cohere-user:
     username: cohere-user
-    password: pbkdf2:sha256:260000$RbSFKuUHZlDvbU5v$f9ee4f4858f98d12d10ea2adfb6d016153b7edcaa06a4fb5665971db77485c54
+    password: pbkdf2:sha256:260000$GKhBzYV9W7Pj8wE3$d712e2ea1e9eccfd14a53e83ec0fa309b3d08d7718d8e60a71c30bdf8fe00b1b
 dashboard_users:
   Foot_Surgeries_Bunionectomy_and_Hammertoe:
   - cohere-user

@@ -21,7 +21,7 @@ explainerhub:
   kwargs: {}
   dashboards:
   - dashboard:
-      explainerfile: Epidural_injections_outpatient_only_explainer.joblib
+      explainerfile: modelFiles/Epidural_injections_outpatient_only/Epidural_injections_outpatient_only.dill
       params:
         title: Epidural injections outpatient only
         name: Epidural_injections_outpatient_only
@@ -56,7 +56,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Facet_injections_explainer.joblib
+      explainerfile:  modelFiles/Facet_injections/Facet_injections.dill
       params:
         title: Facet injections
         name: Facet_injections
@@ -91,7 +91,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Foot_Surgeries_Bunionectomy_and_Hammertoe_explainer.joblib
+      explainerfile: modelFiles/Foot_Surgeries_Bunionectomy_and_Hammertoe/Foot_Surgeries_Bunionectomy_and_Hammertoe.dill
       params:
         title: Foot Surgeries Bunionectomy and Hammertoe
         name: Foot_Surgeries_Bunionectomy_and_Hammertoe
@@ -126,7 +126,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty_explainer.joblib
+      explainerfile: modelFiles/Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty/Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty.dill
       params:
         title: Orthopedic Surgeries Hip Knee and Shoulder Arthroplasty
         name: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty
@@ -161,7 +161,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy_explainer.joblib
+      explainerfile: modelFiles/Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy/Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy.dill
       params:
         title: Orthopedic surgeries hip knee and shoulder arthroscopy
         name: Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy
@@ -196,7 +196,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Pain_infusion_pump_explainer.joblib
+      explainerfile: modelFiles/Pain_infusion_pump/Pain_infusion_pump.dill
       params:
         title: Pain infusion pump
         name: Pain_infusion_pump
@@ -231,7 +231,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: SI_Joint_Injections_explainer.joblib
+      explainerfile: modelFiles/SI_Joint_Injections/SI_Joint_Injections.dill
       params:
         title: SI Joint Injections
         name: SI_Joint_Injections
@@ -266,7 +266,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Spinal_cord_stimulators_explainer.joblib
+      explainerfile: modelFiles/Spinal_cord_stimulators/Spinal_cord_stimulators.dill
       params:
         title: Spinal cord stimulators
         name: Spinal_cord_stimulators
@@ -301,7 +301,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty_explainer.joblib
+      explainerfile: modelFiles/Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty/Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty.dill
       params:
         title: Spinal fusion decompression kyphoplasty and vertebroplasty
         name: Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty
@@ -336,7 +336,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Therapy_physical_occupational_and_speech_explainer.joblib
+      explainerfile: modelFiles/Therapy_physical_occupational_and_speech/Therapy_physical_occupational_and_speech.dill
       params:
         title: Therapy physical occupational and speech
         name: Therapy_physical_occupational_and_speech
@@ -371,7 +371,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Cardiac_devices_explainer.joblib
+      explainerfile: modelFiles/Cardiac_devices/Cardiac_devices.dill
       params:
         title: Cardiac devices
         name: Cardiac_devices
@@ -406,7 +406,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Cardiac_procedures_surgeries_explainer.joblib
+      explainerfile: modelFiles/Cardiac_procedures_surgeries/Cardiac_procedures_surgeries.dill
       params:
         title: Cardiac procedures surgeries
         name: Cardiac_procedures_surgeries
@@ -441,7 +441,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Diagnostic_cardiac_imaging_explainer.joblib
+      explainerfile: modelFiles/Diagnostic_cardiac_imaging/Diagnostic_cardiac_imaging.dill
       params:
         title: Diagnostic cardiac imaging
         name: Diagnostic_cardiac_imaging
@@ -476,7 +476,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Diagnostic_cardiac_imaging_ECHO_explainer.joblib
+      explainerfile: modelFiles/Diagnostic_cardiac_imaging_ECHO/Diagnostic_cardiac_imaging_ECHO.dill
       params:
         title: Diagnostic cardiac imaging ECHO
         name: Diagnostic_cardiac_imaging_ECHO
@@ -511,7 +511,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Colonoscopy_repeat_only_explainer.joblib
+      explainerfile: modelFiles/Colonoscopy_repeat_only/Colonoscopy_repeat_only.dill
       params:
         title: Colonoscopy repeat only
         name: Colonoscopy_repeat_only
@@ -546,7 +546,7 @@ explainerhub:
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy_explainer.joblib
+      explainerfile: modelFiles/Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy/Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy.dill
       params:
         title: Diagnostic esophagogastroduodenoscopy EGD or esophagoscopy
         name: Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy
