@@ -16,8 +16,8 @@ app = Flask(__name__)
 #hub = generate_dashes.generate_pages()
 #hub.to_yaml("hub.yaml", integrate_dashboard_yamls=True)
 hub = ExplainerHub.from_config('hub.yaml')
-#app = hub.flask_server()
+app = hub.flask_server()
 
-if __name__ == '__main__':
-    #hub.run()
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     #hub.run()
+#     app.run_server(debug=True)
