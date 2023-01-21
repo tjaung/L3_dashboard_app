@@ -2,7 +2,7 @@ from backend.data_pull import MODELS_BY_PAL
 import backend.generate_dashes as generate_dashes
 
 from explainerdashboard import ClassifierExplainer, ExplainerDashboard, ExplainerHub
-import dash
+from dash import Dash
 import dash_bootstrap_components as dbc
 import plotly.express as px
 from pathlib import Path
