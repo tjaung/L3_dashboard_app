@@ -16,7 +16,7 @@ explainer:
     permutation_cv: null
     cv: null
     na_fill: -999
-    precision: float64
+    precision: float16
     shap_kwargs: null
     labels:
     - Approve

@@ -13,11 +13,12 @@ import importlib
 
 app = Flask(__name__)
 
-#hub = generate_dashes.generate_pages()
-#hub.to_yaml("hub.yaml", integrate_dashboard_yamls=True)
-hub = ExplainerHub.from_config('hub.yaml')
-app = hub.flask_server()
+hub = generate_dashes.generate_pages()
 
+#hub.to_yaml("hub.yaml", integrate_dashboard_yamls=False)
+#hub = ExplainerHub.from_config('hub.yaml')
+app = hub.flask_server()
+hub.run(port=8090)
 # if __name__ == '__main__':
 #     #hub.run()
 #     app.run_server(debug=True)

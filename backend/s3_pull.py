@@ -182,16 +182,6 @@ def load_cleaned_train_test(params, model):
     return {'X_test': X_test,  
             'y_test': y_test
     }
-#print(list_s3_subdirectories('signal_based_models/msk/by_PAL/SI Joint Injections/'))
-# print(get_model_params_from_s3_buckets('msk', 'Epidural injections (outpatient only)'))
-#print(get_model_params_from_s3_buckets('msk', 'Facet injections'))
-#print(list_s3_subdirectories('signal_based_models/msk/by_PAL/Orthopedic Surgeries: Hip, Knee and Shoulder Arthroplasty/v0_1_2022_12_08/'))
-# print(get_model_params_from_s3_buckets('msk', 'Orthopedic Surgeries: Hip, Knee and Shoulder Arthroplasty'))
-# print(get_model_params_from_s3_buckets('msk', 'SI Joint Injections'))
-
-# print(get_model_params_from_s3_buckets('surgical_services', 'Colonoscopy (repeat only)'))
-#print(get_model_params_from_s3_buckets('msk', 'Diagnostic cardiac imaging_ECHO'))
-
 
         
 

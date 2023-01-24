@@ -17,6 +17,8 @@ import importlib
 from datetime import date
 import dash_bootstrap_components as dbc
 import warnings
+import shap
+
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 #warnings.simplefilter(action='ignore', category=SettingWithCopyWarning)
@@ -51,6 +53,7 @@ import dill
 import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
+import numpy as np
 
 def get_{model_name}_dashboard():
     model_dir = str(Path.cwd() / "modelFiles/{model_name}")
@@ -60,6 +63,14 @@ def get_{model_name}_dashboard():
 
     clas_explainer = ClassifierExplainer.from_file(dill_file)
 
+    # convert dtypes to versions for memory improvement
+    ints = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
+    floats = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
+    clas_explainer.X = clas_explainer.X.astype(ints)
+    clas_explainer.X = clas_explainer.X.astype(floats)
+    
+    print(clas_explainer.memory_usage())
+
     return clas_explainer
 
 #author = MODELS_BY_PAL['{model_title}']['author']
@@ -68,8 +79,11 @@ db = ExplainerDashboard(get_{model_name}_dashboard(),
     title='{model_title}', 
     name='{model_name}',
     logins = [['cohere-user', 'show_m3_the_$']],
-    description="{service.upper()} L3 Model",
-    bootstrap=dbc.themes.LITERA)
+    description="{service.upper().replace('_', ' ')} L3 Model",
+    bootstrap=dbc.themes.LITERA,
+    whatif=False,
+    importances=False,
+    shap_interaction=False)
 
 '''
 
@@ -86,17 +100,19 @@ def generate_dashboard(data, model, params):
     explainer = ClassifierExplainer(model, 
                                     data['X_test'], 
                                     data['y_test'], 
+                                    X_background=shap.sample(data['X_test'], 35),
                                     model_output='probability',
                                 shap='kernel',
+                                precision='float16',
                                 labels=['Approve', 'Pend'])
 
     # pre generate shap and load
     #shap_params = gs.create_shap_vals(data['X_test'], model)
     #explainer.set_shap_values(shap_params[0], shap_params[1])
 
-    _ = ExplainerDashboard(explainer, 
-                            shap_interaction=False, 
-                            logins=[['cohere-user', 'show_m3_the_$']])
+    # _ = ExplainerDashboard(explainer, 
+    #                         shap_interaction=False, 
+    #                         logins=[['cohere-user', 'show_m3_the_$']])
 
     return {'dir': dir,
             'model_name': model_name,
@@ -178,7 +194,7 @@ def generate_pages():
             dashes.append(Y)
             print("================================================")
             
-
+            
     # save the hub dashboard yaml
     #hub.add_user('cohere_user', 'show_m3_the_$')
     #today = date.today()
