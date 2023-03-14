@@ -10,16 +10,11 @@ from pathlib import Path
 import os.path
 import importlib
 
-
-app = Flask(__name__)
-
 hub = generate_dashes.generate_pages()
+#hub.to_yaml(Path.cwd() / "hub.yaml", integrate_dashboard_yamls=True)
+#hub = ExplainerHub.from_config(Path.cwd() / 'hub.yaml')
 
-#hub.to_yaml("hub.yaml", integrate_dashboard_yamls=False)
-#hub = ExplainerHub.from_config('hub.yaml')
-app = hub.flask_server()
+hub.run(host='0.0.0.0', port=9050, use_waitress=True)
 
-#hub.run(port=8090)
 # if __name__ == '__main__':
 #     #hub.run()
-#     app.run_server(debug=True)

@@ -21,7 +21,7 @@ explainerhub:
   kwargs: {}
   dashboards:
   - dashboard:
-      explainerfile: modelFiles/Epidural_injections_outpatient_only/Epidural_injections_outpatient_only.dill
+      explainerfile: Epidural_injections_outpatient_only_explainer.joblib
       params:
         title: Epidural injections outpatient only
         name: Epidural_injections_outpatient_only
@@ -46,17 +46,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile:  modelFiles/Facet_injections/Facet_injections.dill
+      explainerfile: Facet_injections_explainer.joblib
       params:
         title: Facet injections
         name: Facet_injections
@@ -81,17 +81,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Foot_Surgeries_Bunionectomy_and_Hammertoe/Foot_Surgeries_Bunionectomy_and_Hammertoe.dill
+      explainerfile: Foot_Surgeries_Bunionectomy_and_Hammertoe_explainer.joblib
       params:
         title: Foot Surgeries Bunionectomy and Hammertoe
         name: Foot_Surgeries_Bunionectomy_and_Hammertoe
@@ -116,17 +116,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty/Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty.dill
+      explainerfile: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty_explainer.joblib
       params:
         title: Orthopedic Surgeries Hip Knee and Shoulder Arthroplasty
         name: Orthopedic_Surgeries_Hip_Knee_and_Shoulder_Arthroplasty
@@ -151,17 +151,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy/Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy.dill
+      explainerfile: Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy_explainer.joblib
       params:
         title: Orthopedic surgeries hip knee and shoulder arthroscopy
         name: Orthopedic_surgeries_hip_knee_and_shoulder_arthroscopy
@@ -186,17 +186,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Pain_infusion_pump/Pain_infusion_pump.dill
+      explainerfile: Pain_infusion_pump_explainer.joblib
       params:
         title: Pain infusion pump
         name: Pain_infusion_pump
@@ -221,17 +221,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/SI_Joint_Injections/SI_Joint_Injections.dill
+      explainerfile: SI_Joint_Injections_explainer.joblib
       params:
         title: SI Joint Injections
         name: SI_Joint_Injections
@@ -256,17 +256,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Spinal_cord_stimulators/Spinal_cord_stimulators.dill
+      explainerfile: Spinal_cord_stimulators_explainer.joblib
       params:
         title: Spinal cord stimulators
         name: Spinal_cord_stimulators
@@ -291,17 +291,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty/Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty.dill
+      explainerfile: Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty_explainer.joblib
       params:
         title: Spinal fusion decompression kyphoplasty and vertebroplasty
         name: Spinal_fusion_decompression_kyphoplasty_and_vertebroplasty
@@ -326,17 +326,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   - dashboard:
-      explainerfile: modelFiles/Therapy_physical_occupational_and_speech/Therapy_physical_occupational_and_speech.dill
+      explainerfile: Therapy_physical_occupational_and_speech_explainer.joblib
       params:
         title: Therapy physical occupational and speech
         name: Therapy_physical_occupational_and_speech
@@ -361,17 +361,17 @@ explainerhub:
         responsive: true
         logins: null
         port: 8050
-        importances: true
+        importances: false
         model_summary: true
         contributions: true
-        whatif: true
+        whatif: false
         shap_dependence: true
-        shap_interaction: true
+        shap_interaction: false
         decision_trees: true
         kwargs: {}
         tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Cardiac_devices/Cardiac_devices.dill
+  #     explainerfile: Cardiac_devices_explainer.joblib
   #     params:
   #       title: Cardiac devices
   #       name: Cardiac_devices
@@ -396,17 +396,17 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Cardiac_procedures_surgeries/Cardiac_procedures_surgeries.dill
+  #     explainerfile: Cardiac_procedures_surgeries_explainer.joblib
   #     params:
   #       title: Cardiac procedures surgeries
   #       name: Cardiac_procedures_surgeries
@@ -431,17 +431,17 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Diagnostic_cardiac_imaging/Diagnostic_cardiac_imaging.dill
+  #     explainerfile: Diagnostic_cardiac_imaging_explainer.joblib
   #     params:
   #       title: Diagnostic cardiac imaging
   #       name: Diagnostic_cardiac_imaging
@@ -466,17 +466,17 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Diagnostic_cardiac_imaging_ECHO/Diagnostic_cardiac_imaging_ECHO.dill
+  #     explainerfile: Diagnostic_cardiac_imaging_ECHO_explainer.joblib
   #     params:
   #       title: Diagnostic cardiac imaging ECHO
   #       name: Diagnostic_cardiac_imaging_ECHO
@@ -501,21 +501,21 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Colonoscopy_repeat_only/Colonoscopy_repeat_only.dill
+  #     explainerfile: Colonoscopy_repeat_only_explainer.joblib
   #     params:
   #       title: Colonoscopy repeat only
   #       name: Colonoscopy_repeat_only
-  #       description: SURGICAL_SERVICES L3 Model
+  #       description: SURGICAL SERVICES L3 Model
   #       simple: false
   #       hide_header: false
   #       header_hide_title: false
@@ -536,21 +536,21 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null
   # - dashboard:
-  #     explainerfile: modelFiles/Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy/Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy.dill
+  #     explainerfile: Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy_explainer.joblib
   #     params:
   #       title: Diagnostic esophagogastroduodenoscopy EGD or esophagoscopy
   #       name: Diagnostic_esophagogastroduodenoscopy_EGD_or_esophagoscopy
-  #       description: SURGICAL_SERVICES L3 Model
+  #       description: SURGICAL SERVICES L3 Model
   #       simple: false
   #       hide_header: false
   #       header_hide_title: false
@@ -571,12 +571,12 @@ explainerhub:
   #       responsive: true
   #       logins: null
   #       port: 8050
-  #       importances: true
+  #       importances: false
   #       model_summary: true
   #       contributions: true
-  #       whatif: true
+  #       whatif: false
   #       shap_dependence: true
-  #       shap_interaction: true
+  #       shap_interaction: false
   #       decision_trees: true
   #       kwargs: {}
   #       tabs: null

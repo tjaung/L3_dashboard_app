@@ -37,7 +37,7 @@ def create_directory_if_not_exist(path):
 def dump_explainer_files(explainer, model, path):
 
     explainer.dump(path / f"{model}.dill")
-
+  #  explainer.to_joblib(path / f"{model}.joblib")
     explainer.to_yaml(path / f"{model}_dashboard.yaml")
 
 def generate_python_code_for_dashboard(dir, model_name, service):
@@ -64,10 +64,10 @@ def get_{model_name}_dashboard():
     clas_explainer = ClassifierExplainer.from_file(dill_file)
 
     # convert dtypes to versions for memory improvement
-    ints = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
-    floats = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
-    clas_explainer.X = clas_explainer.X.astype(ints)
-    clas_explainer.X = clas_explainer.X.astype(floats)
+    # ints = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
+    # floats = dict.fromkeys(clas_explainer.X.select_dtypes(np.int64).columns, np.int8)
+    # clas_explainer.X = clas_explainer.X.astype(ints)
+    # clas_explainer.X = clas_explainer.X.astype(floats)
     
     print(clas_explainer.memory_usage())
 
@@ -78,7 +78,6 @@ def get_{model_name}_dashboard():
 db = ExplainerDashboard(get_{model_name}_dashboard(), 
     title='{model_title}', 
     name='{model_name}',
-    logins = [['cohere-user', 'show_m3_the_$']],
     description="{service.upper().replace('_', ' ')} L3 Model",
     bootstrap=dbc.themes.LITERA,
     whatif=False,
@@ -100,19 +99,23 @@ def generate_dashboard(data, model, params):
     explainer = ClassifierExplainer(model, 
                                     data['X_test'], 
                                     data['y_test'], 
-                                    X_background=shap.sample(data['X_test'], 35),
+                                    X_background=shap.sample(data['X_test'], 30),
                                     model_output='probability',
                                 shap='kernel',
                                 precision='float16',
                                 labels=['Approve', 'Pend'])
+    ints = dict.fromkeys(explainer.X.select_dtypes(np.int64).columns, np.int8)
+    floats = dict.fromkeys(explainer.X.select_dtypes(np.int64).columns, np.int8)
+    explainer.X = explainer.X.astype(ints)
+    explainer.X = explainer.X.astype(floats)
 
     # pre generate shap and load
     #shap_params = gs.create_shap_vals(data['X_test'], model)
     #explainer.set_shap_values(shap_params[0], shap_params[1])
 
-    # _ = ExplainerDashboard(explainer, 
-    #                         shap_interaction=False, 
-    #                         logins=[['cohere-user', 'show_m3_the_$']])
+    _ = ExplainerDashboard(explainer)
+
+  #  generate_dash_files(dir, model_name, explainer, params)
 
     return {'dir': dir,
             'model_name': model_name,
@@ -159,15 +162,16 @@ def get_dash_info(service, p):
             'data': data}
 
 def generate_pages():
-
+    fail = False
     dashes = []
     service_types = ['msk', 'cardio', 'surgical_services']
     for service in service_types:
-
+        fail = False
         # get pal directory:
         pals = []
 
         for dir in s3_pull.list_s3_subdirectories(f'signal_based_models/{service}/by_PAL/'):
+            
             p = os.path.basename(os.path.normpath(dir))
             pals.append(p)
             print(p)
@@ -177,22 +181,28 @@ def generate_pages():
             if not os.path.exists(Path.cwd()/f'pages/L3_models/{pal_file}.py'):
                 info = get_dash_info(service, p)
 
-                # make dashboard
-                if len(info['data']['X_test']) != len(info['data']['y_test']):
-                    print('Size of data X and y not the same. Skipping dashboard generation...')
-                    continue
-
-                dash_info = generate_dashboard(info['data'], info['model'], info['params'])
-                generate_dash_files(dash_info['dir'], dash_info['model_name'], dash_info['explainer'], info['params'])
-            
-            # add to hub
-            module = 'pages.L3_models.' + pal_file
-            print('================================================')
-            print(module)
-            Y = getattr(importlib.import_module(module), 'db')
-            print(Y)
-            dashes.append(Y)
-            print("================================================")
+                try:
+                    # make dashboard
+                    if len(info['data']['X_test']) != len(info['data']['y_test']):
+                        print('Size of data X and y not the same. Skipping dashboard generation...')
+                        continue
+                    
+                    dash_info = generate_dashboard(info['data'], info['model'], info['params'])
+                    generate_dash_files(dash_info['dir'], dash_info['model_name'], dash_info['explainer'], info['params'])
+                except:
+                    fail = True
+                    pass
+            if fail:
+                pass
+            else:
+                # add to hub
+                module = 'pages.L3_models.' + pal_file
+                print('================================================')
+                print(module)
+                Y = getattr(importlib.import_module(module), 'db')
+                print(Y)
+                dashes.append(Y)
+                print("================================================")
             
             
     # save the hub dashboard yaml
@@ -201,6 +211,27 @@ def generate_pages():
     #hub_v = f'modelFiles/humana_dashboards_{today}.yaml'
     #hub.to_yaml(Path.cwd()/hub_v)
     
+    hub = ExplainerHub(dashes, title="Data Science Team L3 Models",
+            description="Dashboards for the Humana L3 Models created by the DS team.",
+           # no_index=True)#,
+            add_dashboard_route=True,
+            bootstrap=dbc.themes.LITERA)
+#            index_to_base_route=True)
+    
+    return hub
+
+def generate_from_py_scripts(exclude=[]):
+    dashes = []
+    for page in os.listdir(Path.cwd()/'pages/L3_models/'):
+        if page in exclude or page == exclude:
+            print(f'Excluding dashboard: {page}')
+            continue
+        page = 'pages.L3_models.' + page
+        print(page)
+        Y = getattr(importlib.import_module(page), 'db')
+        #print(Y)
+        dashes.append(Y)
+
     hub = ExplainerHub(dashes, title="Data Science Team L3 Models",
             description="Dashboards for the Humana L3 Models created by the DS team.",
            # no_index=True)#,
